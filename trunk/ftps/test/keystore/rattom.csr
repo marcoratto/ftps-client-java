@@ -1,0 +1,63 @@
+Certificate Request:
+    Data:
+        Version: 0 (0x0)
+        Subject: C=IT, ST=Piemonte, L=Torino, O=IVECO S.p.A., OU=FTPS Client, CN=Marco Ratto/emailAddress=marco.ratto@iveco.com
+        Subject Public Key Info:
+            Public Key Algorithm: rsaEncryption
+                Public-Key: (2048 bit)
+                Modulus:
+                    00:bb:a1:c2:15:8e:3f:15:c9:d9:d2:cd:d1:a7:50:
+                    ea:db:d1:88:33:87:a5:78:4d:a1:a8:e0:61:2d:c8:
+                    b9:da:98:72:78:22:80:a4:c3:28:5f:3f:c5:25:4d:
+                    68:80:ab:c1:7a:f3:fc:8c:3e:6a:e9:0c:27:a9:68:
+                    67:99:13:da:09:62:23:b4:ab:6e:e8:5f:42:e2:88:
+                    24:fa:2e:50:60:ad:e4:05:88:58:d2:19:7f:f1:4d:
+                    3e:e3:71:46:34:f5:1b:68:16:f4:9d:39:0a:ac:51:
+                    3b:61:a4:19:8a:0c:29:46:76:89:a2:3e:28:ca:15:
+                    15:c1:a1:e8:c1:13:7e:a3:79:d3:8d:6e:55:41:ea:
+                    9b:8a:a2:93:3f:09:92:c3:7c:b9:cb:20:42:73:bc:
+                    88:4f:2f:98:cf:e2:86:96:b9:de:bd:44:3f:7c:0d:
+                    4c:fe:31:e9:36:3f:e6:07:19:dd:03:06:ea:4c:e4:
+                    d4:6e:33:b2:91:83:eb:29:8e:17:d4:ee:b8:22:0d:
+                    9b:c4:55:61:a6:8b:bc:fe:46:d4:ca:07:2f:3f:2b:
+                    05:85:3e:d4:ea:d8:2a:65:9a:1b:ee:09:ea:9e:89:
+                    87:fc:08:10:a7:04:59:1f:e2:62:8d:6a:db:37:ca:
+                    2e:00:7c:23:4a:f7:5e:81:76:50:0f:a4:f0:c6:65:
+                    39:f3
+                Exponent: 65537 (0x10001)
+        Attributes:
+            a0:00
+    Signature Algorithm: sha1WithRSAEncryption
+         5e:e0:01:d2:26:c9:5e:37:62:73:9a:a5:ea:08:96:cd:9f:75:
+         af:29:0d:14:9e:c2:82:76:4f:68:cd:8b:eb:b7:a3:af:56:33:
+         f9:fd:62:dd:1f:f1:1c:3b:59:e2:0d:dc:15:37:f5:71:ba:18:
+         cd:da:56:54:46:77:4b:92:1d:fc:0d:aa:27:7e:68:31:b1:ca:
+         4d:04:39:d6:38:ff:c3:67:61:3e:04:81:99:b4:f0:eb:e6:7f:
+         16:21:8a:ff:3f:0c:d7:0d:14:11:1d:25:4b:77:45:9d:df:09:
+         b0:f4:41:49:98:f1:41:84:33:1f:4a:28:d7:3e:6d:5d:95:52:
+         c0:f5:a3:ec:9b:5a:28:ce:01:9d:4c:3f:fc:df:24:a7:2a:4b:
+         a7:f0:9e:fb:f2:92:4e:3c:af:59:9a:e9:99:c1:d6:2e:b8:8d:
+         55:87:4b:fe:73:9a:cb:c4:ff:3a:ea:f3:a3:58:c4:33:a1:62:
+         73:9f:84:89:cd:55:e7:44:ef:b6:15:f5:a5:87:fd:83:47:14:
+         20:3d:0c:74:e9:cd:dc:a4:9e:13:64:b3:cc:5e:cd:9d:a3:4a:
+         e6:f3:55:f3:a1:73:2c:be:6e:f2:65:fd:aa:58:b1:fc:0e:70:
+         1c:7f:5c:c8:12:f3:aa:83:35:78:a8:ec:18:e3:ec:65:21:a8:
+         fc:34:f7:ff
+-----BEGIN CERTIFICATE REQUEST-----
+MIIC4DCCAcgCAQAwgZoxCzAJBgNVBAYTAklUMREwDwYDVQQIDAhQaWVtb250ZTEP
+MA0GA1UEBwwGVG9yaW5vMRUwEwYDVQQKDAxJVkVDTyBTLnAuQS4xFDASBgNVBAsM
+C0ZUUFMgQ2xpZW50MRQwEgYDVQQDDAtNYXJjbyBSYXR0bzEkMCIGCSqGSIb3DQEJ
+ARYVbWFyY28ucmF0dG9AaXZlY28uY29tMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8A
+MIIBCgKCAQEAu6HCFY4/FcnZ0s3Rp1Dq29GIM4eleE2hqOBhLci52phyeCKApMMo
+Xz/FJU1ogKvBevP8jD5q6QwnqWhnmRPaCWIjtKtu6F9C4ogk+i5QYK3kBYhY0hl/
+8U0+43FGNPUbaBb0nTkKrFE7YaQZigwpRnaJoj4oyhUVwaHowRN+o3nTjW5VQeqb
+iqKTPwmSw3y5yyBCc7yITy+Yz+KGlrnevUQ/fA1M/jHpNj/mBxndAwbqTOTUbjOy
+kYPrKY4X1O64Ig2bxFVhpou8/kbUygcvPysFhT7U6tgqZZob7gnqnomH/AgQpwRZ
+H+JijWrbN8ouAHwjSvdegXZQD6TwxmU58wIDAQABoAAwDQYJKoZIhvcNAQEFBQAD
+ggEBAF7gAdImyV43YnOapeoIls2fda8pDRSewoJ2T2jNi+u3o69WM/n9Yt0f8Rw7
+WeIN3BU39XG6GM3aVlRGd0uSHfwNqid+aDGxyk0EOdY4/8NnYT4EgZm08OvmfxYh
+iv8/DNcNFBEdJUt3RZ3fCbD0QUmY8UGEMx9KKNc+bV2VUsD1o+ybWijOAZ1MP/zf
+JKcqS6fwnvvykk48r1ma6ZnB1i64jVWHS/5zmsvE/zrq86NYxDOhYnOfhInNVedE
+77YV9aWH/YNHFCA9DHTpzdyknhNks8xezZ2jSubzVfOhcyy+bvJl/apYsfwOcBx/
+XMgS86qDNXio7Bjj7GUhqPw09/8=
+-----END CERTIFICATE REQUEST-----

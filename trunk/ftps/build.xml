@@ -1,0 +1,307 @@
+<project name="ftps" default="all" basedir=".">
+	<description>FTPS - ftp over TLS command-line tool</description>
+	<property environment="myenv" />
+	<property name="project_version" value="1.2" />
+	<property name="project_name" value="${ant.project.name}" />
+	<property name="project_home" location="${basedir}" />
+	<property name="doc_dir" location="${project_home}/docs" />
+	<property name="coverage_dir" location="${doc_dir}/coverage" />
+	<property name="junit_dir" location="${doc_dir}/unit_tests" />
+	<property name="build_dir" location="${project_home}/build/${project_name}_v${project_version}" />
+	<property name="bin_dir" location="${project_home}/bin" />
+	<property name="tmp_dir" location="${project_home}/tmp" />
+	<property name="lib_dir" location="${project_home}/lib" />
+	<property name="res_dir" location="${project_home}/res" />
+	<property name="licenses_dir" location="${project_home}/licenses" />	
+	<property name="class_dir" location="${project_home}/classes" />
+	<property name="java_dir" location="${project_home}/java" />
+	<property name="test.dir" location="${project_home}/test" />
+	<property name="test.java.dir" location="${test.dir}/java" />
+	<property name="jar_file" location="${bin_dir}/${project_name}.jar" />
+	<property name="jardesc_file" location="${bin_dir}/${project_name}.jardesc" />
+	<property name="md5_file" location="${bin_dir}/${project_name}.jar.md5" />
+	<property name="sha_file" location="${bin_dir}/${project_name}.jar.sha" />
+	<property name="pgp_file" location="${bin_dir}/${project_name}.jar.asc" />
+	<property name="file_src.tar" value="${build_dir}/${project_name}_v${project_version}.src.tar" />
+	<property name="file_src.tar.gz" value="${build_dir}/${project_name}_v${project_version}.src.tar.gz" />
+	<property name="file_src.zip" value="${build_dir}/${project_name}_v${project_version}.src.zip" />
+	<property name="file_bin.tar" value="${build_dir}/${project_name}_v${project_version}.bin.tar" />
+	<property name="file_bin.tar.gz" value="${build_dir}/${project_name}_v${project_version}.bin.tar.gz" />
+	<property name="file_bin.zip" value="${build_dir}/${project_name}_v${project_version}.bin.zip" />
+
+	<path id="project.class.path">
+		<fileset dir="${lib_dir}">
+			<include name="**/*.jar" />
+		</fileset>
+	</path>
+
+	<target name="clean" description="clean up">
+		<delete dir="${tmp_dir}/${project_name}-${project_version}" />
+		<delete file="${jar_file}" />
+		<delete file="${file_src.tar.gz}" />
+		<delete file="${file_bin.tar.gz}" />
+		<delete file="${file_src.zip}" />
+		<delete file="${file_bin.zip}" />
+		<delete>
+			<fileset dir="${class_dir}">
+				<include name="**/*.class" />
+				<include name="**/*.xml" />
+				<include name="**/*.properties" />
+				<include name="**/*.script" />
+				<exclude name="**/CVS" />
+				<exclude name="**/.svn" />
+			</fileset>
+		</delete>
+	</target>
+
+	<target name="init">
+		<mkdir dir="${build_dir}" />
+		<mkdir dir="${bin_dir}" />
+		<mkdir dir="${class_dir}" />
+		<mkdir dir="${tmp_dir}/${project_name}-${project_version}" />
+		<mkdir dir="${tmp_dir}/${project_name}-${project_version}/bin" />
+		<echo file="${project_home}/VERSION">${project_name}_v${project_version}</echo>
+	</target>
+
+	<target name="java.compile" depends="init" description="compile the source">
+		<javac srcdir="${java_dir}" destdir="${class_dir}" deprecation="on">
+			<compilerarg value="-Xlint:unchecked" />
+			<classpath refid="project.class.path" />
+		</javac>
+	</target>
+
+	<target name="test.compile" depends="init" description="compile the source">
+		<javac srcdir="${test.java.dir}" destdir="${class_dir}" deprecation="on">
+			<compilerarg value="-Xlint:unchecked" />
+			<classpath refid="project.class.path" />
+		</javac>
+	</target>
+    	
+	<target name="emma.instr" depends="java.compile,test.compile">		
+	    <emma>
+	        <instr instrpath="${class_dir}"
+	               destdir="${class_dir}"
+	               metadatafile="${coverage_dir}/metadata.emma"
+	               merge="true" mode="overwrite" />
+	    </emma>
+	</target>
+
+	<!-- Run all the JUnit Tests -->
+	<target name="junit" depends="emma.instr">
+	    <mkdir dir="${tmp_dir}/test-out" />
+	    <record name="${tmp_dir}/test-output.txt" append="no" action="start"/>
+	    <junit printsummary="yes" fork="yes">
+	        <jvmarg value="-Demma.coverage.out.file=${tmp_dir}/coverage.emma" />
+	        <jvmarg value="-Demma.coverage.out.merge=true" />
+			<classpath refid="project.class.path" />
+			<classpath path="${class_dir}" />	    	
+	        <!-- <formatter type="plain"/> -->
+	        <formatter type="xml"/>
+	        <batchtest fork="yes" todir="${tmp_dir}/test-out">
+	            <fileset dir="${test.java.dir}">
+	                <include name="**/Test*.java"/>
+	            	<exclude name="**/TestAll.java"/>
+	            </fileset>
+	        </batchtest>
+	    </junit>		
+		<junitreport todir="tmp/rawtestoutput">
+			<fileset dir="tmp/rawtestoutput" />
+			<report todir="docs/unit_tests" />
+		</junitreport>		
+	    <record name="${tmp_dir}/test-output.txt" action="stop"/>
+	</target>
+
+	<!-- Generate Emma Report -->
+	<target name="emma.report" depends="junit">
+	    <emma enabled="true">
+	        <report sourcepath="${java_dir},${test.dir}"
+	                sort="+name,+class,+method,+block"
+	                metrics="method:70,block:80,line:80,class:100">
+	            <fileset dir="${tmp_dir}">
+	                <include name="*.emma" />
+	            </fileset>
+			    <html outfile="${coverage_dir}/coverage.html" depth="method" />
+	        </report>
+	    </emma>
+	    <delete dir="${class_dir}/*" /> 
+	</target>
+
+	<target name="javadoc" description="generate documentation">
+		  <javadoc destdir="${doc_dir}/api"
+		           author="true"
+		           version="true"
+		           use="true"
+		           windowtitle="${ant.project.name}">
+		    <doctitle><![CDATA[<h1>Test</h1>]]></doctitle>
+		    <bottom><![CDATA[<i>Copyright &#169; 2009 - http://code.google.com/p/anttaskmqseries </i>]]></bottom>
+		  		<packageset dir="${java_dir}" defaultexcludes="no">
+					<include name="**/*"/>
+		  	    </packageset>
+		  </javadoc>
+	</target>
+		
+	<target name="hudson" depends="all,javadoc" description="Task for Hudson">
+	</target>
+	
+	<target name="jar.create" depends="java.compile" description="generate the distribution">
+		<jar jarfile="${jar_file}">
+			<manifest>
+				<attribute name="Built-By" value="${user.name}" />
+				<section name="${project_name}">
+					<attribute name="Specification-Title" value="${project_name}" />
+					<attribute name="Specification-Version" value="${project_version}" />
+					<attribute name="Specification-Vendor" value="" />
+					<attribute name="Implementation-Title" value="${project_name}" />
+					<attribute name="Implementation-Version" value="${project_version}" />
+				</section>
+			</manifest>
+			<fileset dir="${class_dir}" includes="**/*.class" />
+		</jar>
+	</target>
+
+	<target name="fixWin32" description="Fix CR+LF Windows files">
+		<fixcrlf srcdir="${project_home}" includes="**/*.bat" eol="crlf" />
+	</target>
+
+	<target name="junit.old" depends="java.compile,test.compile">
+		<delete dir="tmp/rawtestoutput" />
+		<mkdir dir="tmp/rawtestoutput" />
+		<junit fork="no">
+			<classpath refid="project.class.path" />
+			<classpath path="${class_dir}" />
+			<batchtest todir="tmp/rawtestoutput">
+				<fileset dir="${test.java.dir}">
+					<include name="**/Test*.java" />
+					<exclude name="**/TestAll.java" />
+				</fileset>
+				<formatter type="xml" />
+			</batchtest>
+		</junit>
+		<junitreport todir="tmp/rawtestoutput">
+			<fileset dir="tmp/rawtestoutput" />
+			<report todir="doc/unit_tests" />
+		</junitreport>
+	</target>
+
+	<target name="dist.binaries" depends="jar.create" description="create distributable package">
+		<copy file="${project_home}/KEYS" todir="${tmp_dir}/${project_name}-${project_version}" />
+		<copy file="${project_home}/AUTHORS" todir="${tmp_dir}/${project_name}-${project_version}" />
+		<copy file="${project_home}/THANKS" todir="${tmp_dir}/${project_name}-${project_version}" />
+		<copy file="${project_home}/BUGS" todir="${tmp_dir}/${project_name}-${project_version}" />
+		<copy file="${project_home}/VERSION" todir="${tmp_dir}/${project_name}-${project_version}" />
+		<copy file="${project_home}/ftps.sh" todir="${tmp_dir}/${project_name}-${project_version}" />
+		<copy file="${project_home}/ftps.bat" todir="${tmp_dir}/${project_name}-${project_version}" />
+				
+		<copy file="${jar_file}" todir="${tmp_dir}/${project_name}-${project_version}/bin" />
+
+		<copy todir="${tmp_dir}/${project_name}-${project_version}/res">
+			<fileset dir="${res_dir}">
+				<include name="**/*.*" />
+				<exclude name="**/CVS" />
+				<exclude name="**/.svn" />
+			</fileset>
+		</copy>
+			
+		<copy todir="${tmp_dir}/${project_name}-${project_version}/lib">
+			<fileset dir="${lib_dir}">
+				<include name="**/*.jar" />
+				<exclude name="**/CVS" />
+				<exclude name="**/.svn" />
+			</fileset>
+		</copy>
+
+		<zip destfile="${file_bin.zip}">
+			<zipfileset dir="${tmp_dir}/${project_name}-${project_version}" prefix="${project_name}-${project_version}" />
+		</zip>
+		<antcall target="checksum">
+			<param name="file" value="${file_bin.zip}" />
+		</antcall>
+
+		<tar tarfile="${file_bin.tar}">
+			<tarfileset dir="${tmp_dir}/${project_name}-${project_version}" prefix="${project_name}-${project_version}" />
+		</tar>
+		<gzip zipfile="${file_bin.tar.gz}" src="${file_bin.tar}" />
+		<delete file="${file_bin.tar}" />
+		<antcall target="checksum">
+			<param name="file" value="${file_bin.tar.gz}" />
+		</antcall>
+	</target>
+
+	<target name="dist.sources" depends="dist.binaries" description="create distributable package">
+		<copy file="${jardesc_file}" todir="${tmp_dir}/${project_name}-${project_version}/bin" />
+		
+		<copy todir="${tmp_dir}/${project_name}-${project_version}/lib">
+			<fileset dir="${project_home}/lib">
+				<exclude name="**/.svn" />
+				<exclude name="**/CVS" />
+				<include name="**/*.jar" />
+			</fileset>
+		</copy>
+
+		<mkdir dir="${tmp_dir}/${project_name}-${project_version}/classes" />
+
+		<copy file="${project_home}/build.xml" todir="${tmp_dir}/${project_name}-${project_version}" />
+
+		<copy todir="${tmp_dir}/${project_name}-${project_version}/java">
+			<fileset dir="${java_dir}">
+				<exclude name="**/CVS" />
+			</fileset>
+		</copy>
+
+		<zip destfile="${file_src.zip}">
+			<zipfileset dir="${tmp_dir}/${project_name}-${project_version}" prefix="${project_name}-${project_version}" />
+		</zip>
+		<antcall target="checksum">
+			<param name="file" value="${file_src.zip}" />
+		</antcall>
+
+		<tar tarfile="${file_src.tar}">
+			<tarfileset dir="${tmp_dir}/${project_name}-${project_version}" prefix="${project_name}-${project_version}" />
+		</tar>
+		<gzip zipfile="${file_src.tar.gz}" src="${file_src.tar}" />
+		<delete file="${file_src.tar}" />
+		<antcall target="checksum">
+			<param name="file" value="${file_src.tar.gz}" />
+		</antcall>
+	</target>
+
+	<target name="dist" depends="clean" description="create distributable package">
+		<antcall target="dist.binaries" />
+		<antcall target="dist.sources" />
+	</target>
+
+	<target name="checksum">
+		<delete file="${file}.md5" />
+		<delete file="${file}.sha" />
+		<delete file="${file}.asc" />
+		<checksum file="${file}" forceOverwrite="yes" algorithm="MD5" format="MD5SUM" fileext=".md5" />
+		<checksum file="${file}" forceOverwrite="yes" algorithm="SHA" format="MD5SUM" fileext=".sha" />
+		<antcall target="gpg_sign">
+			<param name="file" value="${file}" />
+		</antcall>
+	</target>
+
+	<target name="check_gpg_password" description="Check">
+		<fail message="Add the parameter on command line: -Dgpg_password=PASSWORD">
+			<condition>
+				<not>
+					<isset property="gpg_password" />
+				</not>
+			</condition>
+		</fail>
+	</target>
+
+	<target name="gpg_sign" depends="check_gpg_password">
+		<exec executable="echo" os="Linux" vmlauncher="false" spawn="false">
+			<arg line="${gpg_password}|gpg --batch --passphrase-fd 0 -u 5C79EE7A -b -a -s ${file}" />
+		</exec>
+		<exec executable="cmd.exe" os="Windows XP" vmlauncher="false" spawn="false">
+			<arg line="/c echo ${gpg_password}|C:\Programmi\GNU\GnuPG\gpg.exe --batch --passphrase-fd 0 -u 5C79EE7A -b -a -s ${file}" />
+		</exec>
+	</target>
+
+	<target name="all" depends="clean,init,java.compile,jar.create">
+	</target>
+
+</project>
+
