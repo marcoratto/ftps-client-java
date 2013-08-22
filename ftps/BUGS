@@ -1,0 +1,25 @@
+scp-client-java - BUGS
+======================
+
+known at this date:
+
+- None ( That I'was able to reproduce ;) ) 
+
+How to report bugs
+==================
+
+PLEASE check the BUGS file before reporting a bug.
+
+To report a bug, go to http://code.google.com/p/scp-java-client/issues/list
+
+In the report include:
+
+* The version of the program
+
+* Information about your system. For instance:
+
+   - What operating system and version
+  
+  And anything else you think is relevant.
+
+* How to reproduce the bug. 

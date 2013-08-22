@@ -1,0 +1,704 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<BugCollection version="2.0.1" sequence="0" timestamp="1361185603000" analysisTimestamp="1361202183713" release="">
+  <Project>
+    <Jar>/home/rattom/workspacesECLIPSE/ftps-client-java.googlecode.com/ftps/classes</Jar>
+    <AuxClasspathEntry>/home/rattom/workspacesECLIPSE/ftps-client-java.googlecode.com/ftps/lib/commons-net-3.2.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/rattom/workspacesECLIPSE/ftps-client-java.googlecode.com/ftps/lib/log4j-1.2.16.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/home/rattom/workspacesECLIPSE/ftps-client-java.googlecode.com/ftps/lib/commons-io-2.4.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/tmp/findbugs7025437626688771301.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/tmp/findbugs8099547727093448060.jar</AuxClasspathEntry>
+    <SrcDir>/home/rattom/workspacesECLIPSE/ftps-client-java.googlecode.com/ftps/java</SrcDir>
+    <WrkDir>/home/rattom/workspacesECLIPSE/ftps-client-java.googlecode.com/ftps/.sonar/target</WrkDir>
+  </Project>
+  <BugInstance type="URF_UNREAD_FIELD" priority="2" abbrev="UrF" category="PERFORMANCE" instanceHash="a858fef2aecd22f0a9c8ba94c6624b2e" instanceOccurrenceNum="0" instanceOccurrenceMax="0" rank="18">
+    <ShortMessage>Unread field</ShortMessage>
+    <LongMessage>Unread field: uk.co.marcoratto.file.maketree.MakeTree.level</LongMessage>
+    <Class classname="uk.co.marcoratto.file.maketree.MakeTree" primary="true">
+      <SourceLine classname="uk.co.marcoratto.file.maketree.MakeTree">
+        <Message>In &lt;Unknown&gt;</Message>
+      </SourceLine>
+      <Message>In class uk.co.marcoratto.file.maketree.MakeTree</Message>
+    </Class>
+    <Field classname="uk.co.marcoratto.file.maketree.MakeTree" name="level" signature="I" isStatic="false" primary="true">
+      <SourceLine classname="uk.co.marcoratto.file.maketree.MakeTree">
+        <Message>In &lt;Unknown&gt;</Message>
+      </SourceLine>
+      <Message>Field uk.co.marcoratto.file.maketree.MakeTree.level</Message>
+    </Field>
+    <SourceLine classname="uk.co.marcoratto.file.maketree.MakeTree" startBytecode="6" endBytecode="6">
+      <Message>In &lt;Unknown&gt;</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="DM_DEFAULT_ENCODING" priority="1" abbrev="Dm" category="I18N" instanceHash="f0459735271082a10fd164f5bcbcf7a" instanceOccurrenceNum="0" instanceOccurrenceMax="0" rank="19">
+    <ShortMessage>Reliance on default encoding</ShortMessage>
+    <LongMessage>Found reliance on default encoding in uk.co.marcoratto.ftps.FTPS.connect(): new java.io.PrintWriter(OutputStream)</LongMessage>
+    <Class classname="uk.co.marcoratto.ftps.FTPS" primary="true">
+      <SourceLine classname="uk.co.marcoratto.ftps.FTPS">
+        <Message>In &lt;Unknown&gt;</Message>
+      </SourceLine>
+      <Message>In class uk.co.marcoratto.ftps.FTPS</Message>
+    </Class>
+    <Method classname="uk.co.marcoratto.ftps.FTPS" name="connect" signature="()V" isStatic="false" primary="true">
+      <SourceLine classname="uk.co.marcoratto.ftps.FTPS"/>
+      <Message>In method uk.co.marcoratto.ftps.FTPS.connect()</Message>
+    </Method>
+    <Method classname="java.io.PrintWriter" name="&lt;init&gt;" signature="(Ljava/io/OutputStream;)V" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.io.PrintWriter" start="93" end="94" startBytecode="0" endBytecode="34" sourcefile="PrintWriter.java" sourcepath="java/io/PrintWriter.java"/>
+      <Message>Called method new java.io.PrintWriter(OutputStream)</Message>
+    </Method>
+    <SourceLine classname="uk.co.marcoratto.ftps.FTPS" startBytecode="450" endBytecode="450">
+      <Message>In &lt;Unknown&gt;</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="MS_SHOULD_BE_FINAL" priority="1" abbrev="MS" category="MALICIOUS_CODE" instanceHash="9f6a0ef5e37170298847c7222b990790" instanceOccurrenceNum="0" instanceOccurrenceMax="0" rank="16">
+    <ShortMessage>Field isn&apos;t final but should be</ShortMessage>
+    <LongMessage>uk.co.marcoratto.ftps.FTPS.DEFAULT_PORT isn&apos;t final but should be</LongMessage>
+    <Class classname="uk.co.marcoratto.ftps.FTPS" primary="true">
+      <SourceLine classname="uk.co.marcoratto.ftps.FTPS">
+        <Message>In &lt;Unknown&gt;</Message>
+      </SourceLine>
+      <Message>In class uk.co.marcoratto.ftps.FTPS</Message>
+    </Class>
+    <Field classname="uk.co.marcoratto.ftps.FTPS" name="DEFAULT_PORT" signature="I" isStatic="true" primary="true">
+      <SourceLine classname="uk.co.marcoratto.ftps.FTPS">
+        <Message>In &lt;Unknown&gt;</Message>
+      </SourceLine>
+      <Message>Field uk.co.marcoratto.ftps.FTPS.DEFAULT_PORT</Message>
+    </Field>
+    <SourceLine classname="uk.co.marcoratto.ftps.FTPS" startBytecode="12" endBytecode="12">
+      <Message>In &lt;Unknown&gt;</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="MS_SHOULD_BE_FINAL" priority="1" abbrev="MS" category="MALICIOUS_CODE" instanceHash="c8998b9c15cf9e38acd9ce4fabdcf747" instanceOccurrenceNum="0" instanceOccurrenceMax="0" rank="16">
+    <ShortMessage>Field isn&apos;t final but should be</ShortMessage>
+    <LongMessage>uk.co.marcoratto.ftps.FTPS.DEFAULT_PRIVATE isn&apos;t final but should be</LongMessage>
+    <Class classname="uk.co.marcoratto.ftps.FTPS" primary="true">
+      <SourceLine classname="uk.co.marcoratto.ftps.FTPS">
+        <Message>In &lt;Unknown&gt;</Message>
+      </SourceLine>
+      <Message>In class uk.co.marcoratto.ftps.FTPS</Message>
+    </Class>
+    <Field classname="uk.co.marcoratto.ftps.FTPS" name="DEFAULT_PRIVATE" signature="Ljava/lang/String;" isStatic="true" primary="true">
+      <SourceLine classname="uk.co.marcoratto.ftps.FTPS">
+        <Message>In &lt;Unknown&gt;</Message>
+      </SourceLine>
+      <Message>Field uk.co.marcoratto.ftps.FTPS.DEFAULT_PRIVATE</Message>
+    </Field>
+    <SourceLine classname="uk.co.marcoratto.ftps.FTPS" startBytecode="72" endBytecode="72">
+      <Message>In &lt;Unknown&gt;</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="MS_SHOULD_BE_FINAL" priority="1" abbrev="MS" category="MALICIOUS_CODE" instanceHash="4390c6cff128864c4948120058b21669" instanceOccurrenceNum="0" instanceOccurrenceMax="0" rank="16">
+    <ShortMessage>Field isn&apos;t final but should be</ShortMessage>
+    <LongMessage>uk.co.marcoratto.ftps.FTPS.DEFAULT_PROTOCOL isn&apos;t final but should be</LongMessage>
+    <Class classname="uk.co.marcoratto.ftps.FTPS" primary="true">
+      <SourceLine classname="uk.co.marcoratto.ftps.FTPS">
+        <Message>In &lt;Unknown&gt;</Message>
+      </SourceLine>
+      <Message>In class uk.co.marcoratto.ftps.FTPS</Message>
+    </Class>
+    <Field classname="uk.co.marcoratto.ftps.FTPS" name="DEFAULT_PROTOCOL" signature="Ljava/lang/String;" isStatic="true" primary="true">
+      <SourceLine classname="uk.co.marcoratto.ftps.FTPS">
+        <Message>In &lt;Unknown&gt;</Message>
+      </SourceLine>
+      <Message>Field uk.co.marcoratto.ftps.FTPS.DEFAULT_PROTOCOL</Message>
+    </Field>
+    <SourceLine classname="uk.co.marcoratto.ftps.FTPS" startBytecode="18" endBytecode="18">
+      <Message>In &lt;Unknown&gt;</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="MS_SHOULD_BE_FINAL" priority="1" abbrev="MS" category="MALICIOUS_CODE" instanceHash="6c189410d3e63eb7d6151f38035cc625" instanceOccurrenceNum="0" instanceOccurrenceMax="0" rank="16">
+    <ShortMessage>Field isn&apos;t final but should be</ShortMessage>
+    <LongMessage>uk.co.marcoratto.ftps.FTPS.DEFAULT_STORE_TYPE isn&apos;t final but should be</LongMessage>
+    <Class classname="uk.co.marcoratto.ftps.FTPS" primary="true">
+      <SourceLine classname="uk.co.marcoratto.ftps.FTPS">
+        <Message>In &lt;Unknown&gt;</Message>
+      </SourceLine>
+      <Message>In class uk.co.marcoratto.ftps.FTPS</Message>
+    </Class>
+    <Field classname="uk.co.marcoratto.ftps.FTPS" name="DEFAULT_STORE_TYPE" signature="Ljava/lang/String;" isStatic="true" primary="true">
+      <SourceLine classname="uk.co.marcoratto.ftps.FTPS">
+        <Message>In &lt;Unknown&gt;</Message>
+      </SourceLine>
+      <Message>Field uk.co.marcoratto.ftps.FTPS.DEFAULT_STORE_TYPE</Message>
+    </Field>
+    <SourceLine classname="uk.co.marcoratto.ftps.FTPS" startBytecode="48" endBytecode="48">
+      <Message>In &lt;Unknown&gt;</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="MS_SHOULD_BE_FINAL" priority="1" abbrev="MS" category="MALICIOUS_CODE" instanceHash="6a38b3c03ff286364655b0f28fb6732d" instanceOccurrenceNum="0" instanceOccurrenceMax="0" rank="16">
+    <ShortMessage>Field isn&apos;t final but should be</ShortMessage>
+    <LongMessage>uk.co.marcoratto.ftps.FTPS.DEFAULT_TRUST_MANAGER_ALL isn&apos;t final but should be</LongMessage>
+    <Class classname="uk.co.marcoratto.ftps.FTPS" primary="true">
+      <SourceLine classname="uk.co.marcoratto.ftps.FTPS">
+        <Message>In &lt;Unknown&gt;</Message>
+      </SourceLine>
+      <Message>In class uk.co.marcoratto.ftps.FTPS</Message>
+    </Class>
+    <Field classname="uk.co.marcoratto.ftps.FTPS" name="DEFAULT_TRUST_MANAGER_ALL" signature="Ljava/lang/String;" isStatic="true" primary="true">
+      <SourceLine classname="uk.co.marcoratto.ftps.FTPS">
+        <Message>In &lt;Unknown&gt;</Message>
+      </SourceLine>
+      <Message>Field uk.co.marcoratto.ftps.FTPS.DEFAULT_TRUST_MANAGER_ALL</Message>
+    </Field>
+    <SourceLine classname="uk.co.marcoratto.ftps.FTPS" startBytecode="24" endBytecode="24">
+      <Message>In &lt;Unknown&gt;</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="MS_SHOULD_BE_FINAL" priority="1" abbrev="MS" category="MALICIOUS_CODE" instanceHash="526fe17937998418552db607e728b77c" instanceOccurrenceNum="0" instanceOccurrenceMax="0" rank="16">
+    <ShortMessage>Field isn&apos;t final but should be</ShortMessage>
+    <LongMessage>uk.co.marcoratto.ftps.FTPS.DEFAULT_TRUST_MANAGER_NONE isn&apos;t final but should be</LongMessage>
+    <Class classname="uk.co.marcoratto.ftps.FTPS" primary="true">
+      <SourceLine classname="uk.co.marcoratto.ftps.FTPS">
+        <Message>In &lt;Unknown&gt;</Message>
+      </SourceLine>
+      <Message>In class uk.co.marcoratto.ftps.FTPS</Message>
+    </Class>
+    <Field classname="uk.co.marcoratto.ftps.FTPS" name="DEFAULT_TRUST_MANAGER_NONE" signature="Ljava/lang/String;" isStatic="true" primary="true">
+      <SourceLine classname="uk.co.marcoratto.ftps.FTPS">
+        <Message>In &lt;Unknown&gt;</Message>
+      </SourceLine>
+      <Message>Field uk.co.marcoratto.ftps.FTPS.DEFAULT_TRUST_MANAGER_NONE</Message>
+    </Field>
+    <SourceLine classname="uk.co.marcoratto.ftps.FTPS" startBytecode="36" endBytecode="36">
+      <Message>In &lt;Unknown&gt;</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="MS_SHOULD_BE_FINAL" priority="1" abbrev="MS" category="MALICIOUS_CODE" instanceHash="4abdb8595947f38ea752190b1960989a" instanceOccurrenceNum="0" instanceOccurrenceMax="0" rank="16">
+    <ShortMessage>Field isn&apos;t final but should be</ShortMessage>
+    <LongMessage>uk.co.marcoratto.ftps.FTPS.DEFAULT_TRUST_MANAGER_VALID isn&apos;t final but should be</LongMessage>
+    <Class classname="uk.co.marcoratto.ftps.FTPS" primary="true">
+      <SourceLine classname="uk.co.marcoratto.ftps.FTPS">
+        <Message>In &lt;Unknown&gt;</Message>
+      </SourceLine>
+      <Message>In class uk.co.marcoratto.ftps.FTPS</Message>
+    </Class>
+    <Field classname="uk.co.marcoratto.ftps.FTPS" name="DEFAULT_TRUST_MANAGER_VALID" signature="Ljava/lang/String;" isStatic="true" primary="true">
+      <SourceLine classname="uk.co.marcoratto.ftps.FTPS">
+        <Message>In &lt;Unknown&gt;</Message>
+      </SourceLine>
+      <Message>Field uk.co.marcoratto.ftps.FTPS.DEFAULT_TRUST_MANAGER_VALID</Message>
+    </Field>
+    <SourceLine classname="uk.co.marcoratto.ftps.FTPS" startBytecode="30" endBytecode="30">
+      <Message>In &lt;Unknown&gt;</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="RV_RETURN_VALUE_IGNORED_BAD_PRACTICE" priority="2" abbrev="RV" category="BAD_PRACTICE" instanceHash="e9fef0dcf0529457c5c04ee19bea0d72" instanceOccurrenceNum="0" instanceOccurrenceMax="0" rank="16">
+    <ShortMessage>Method ignores exceptional return value</ShortMessage>
+    <LongMessage>exceptional return value of java.io.File.delete() ignored in uk.co.marcoratto.ftps.FTPS.execute()</LongMessage>
+    <Class classname="uk.co.marcoratto.ftps.FTPS" primary="true">
+      <SourceLine classname="uk.co.marcoratto.ftps.FTPS">
+        <Message>In &lt;Unknown&gt;</Message>
+      </SourceLine>
+      <Message>In class uk.co.marcoratto.ftps.FTPS</Message>
+    </Class>
+    <Method classname="uk.co.marcoratto.ftps.FTPS" name="execute" signature="()V" isStatic="false" primary="true">
+      <SourceLine classname="uk.co.marcoratto.ftps.FTPS"/>
+      <Message>In method uk.co.marcoratto.ftps.FTPS.execute()</Message>
+    </Method>
+    <Method classname="java.io.File" name="delete" signature="()Z" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.io.File" start="900" end="904" startBytecode="0" endBytecode="59" sourcefile="File.java" sourcepath="java/io/File.java"/>
+      <Message>Called method java.io.File.delete()</Message>
+    </Method>
+    <SourceLine classname="uk.co.marcoratto.ftps.FTPS" startBytecode="1090" endBytecode="1090">
+      <Message>In &lt;Unknown&gt;</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD" priority="2" abbrev="ST" category="STYLE" instanceHash="840d7efc936bf5f1524a3c1f9a661ca7" instanceOccurrenceNum="0" instanceOccurrenceMax="0" rank="17">
+    <ShortMessage>Write to static field from instance method</ShortMessage>
+    <LongMessage>Write to static field uk.co.marcoratto.ftps.Runme.retCode from instance method uk.co.marcoratto.ftps.Runme.execute(String[])</LongMessage>
+    <Class classname="uk.co.marcoratto.ftps.Runme" primary="true">
+      <SourceLine classname="uk.co.marcoratto.ftps.Runme">
+        <Message>In &lt;Unknown&gt;</Message>
+      </SourceLine>
+      <Message>In class uk.co.marcoratto.ftps.Runme</Message>
+    </Class>
+    <Method classname="uk.co.marcoratto.ftps.Runme" name="execute" signature="([Ljava/lang/String;)V" isStatic="false" primary="true">
+      <SourceLine classname="uk.co.marcoratto.ftps.Runme"/>
+      <Message>In method uk.co.marcoratto.ftps.Runme.execute(String[])</Message>
+    </Method>
+    <Field classname="uk.co.marcoratto.ftps.Runme" name="retCode" signature="I" isStatic="true" primary="true">
+      <SourceLine classname="uk.co.marcoratto.ftps.Runme">
+        <Message>In &lt;Unknown&gt;</Message>
+      </SourceLine>
+      <Message>Field uk.co.marcoratto.ftps.Runme.retCode</Message>
+    </Field>
+    <SourceLine classname="uk.co.marcoratto.ftps.Runme" startBytecode="66" endBytecode="66">
+      <Message>In &lt;Unknown&gt;</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD" priority="2" abbrev="ST" category="STYLE" instanceHash="52a8a7c031783ffd8b23be55432783cf" instanceOccurrenceNum="0" instanceOccurrenceMax="0" rank="17">
+    <ShortMessage>Write to static field from instance method</ShortMessage>
+    <LongMessage>Write to static field uk.co.marcoratto.ftps.Runme.retCode from instance method uk.co.marcoratto.ftps.Runme.runme(String[])</LongMessage>
+    <Class classname="uk.co.marcoratto.ftps.Runme" primary="true">
+      <SourceLine classname="uk.co.marcoratto.ftps.Runme">
+        <Message>In &lt;Unknown&gt;</Message>
+      </SourceLine>
+      <Message>In class uk.co.marcoratto.ftps.Runme</Message>
+    </Class>
+    <Method classname="uk.co.marcoratto.ftps.Runme" name="runme" signature="([Ljava/lang/String;)V" isStatic="false" primary="true">
+      <SourceLine classname="uk.co.marcoratto.ftps.Runme"/>
+      <Message>In method uk.co.marcoratto.ftps.Runme.runme(String[])</Message>
+    </Method>
+    <Field classname="uk.co.marcoratto.ftps.Runme" name="retCode" signature="I" isStatic="true" primary="true">
+      <SourceLine classname="uk.co.marcoratto.ftps.Runme">
+        <Message>In &lt;Unknown&gt;</Message>
+      </SourceLine>
+      <Message>Field uk.co.marcoratto.ftps.Runme.retCode</Message>
+    </Field>
+    <SourceLine classname="uk.co.marcoratto.ftps.Runme" startBytecode="100" endBytecode="100">
+      <Message>In &lt;Unknown&gt;</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD" priority="1" abbrev="ST" category="STYLE" instanceHash="1e43709be3d3fe0aa6d463375b33b09e" instanceOccurrenceNum="0" instanceOccurrenceMax="0" rank="15">
+    <ShortMessage>Write to static field from instance method</ShortMessage>
+    <LongMessage>Write to static field uk.co.marcoratto.ftps.listeners.ListenerFactory.instance from instance method uk.co.marcoratto.ftps.listeners.ListenerFactory.reset()</LongMessage>
+    <Class classname="uk.co.marcoratto.ftps.listeners.ListenerFactory" primary="true">
+      <SourceLine classname="uk.co.marcoratto.ftps.listeners.ListenerFactory">
+        <Message>In &lt;Unknown&gt;</Message>
+      </SourceLine>
+      <Message>In class uk.co.marcoratto.ftps.listeners.ListenerFactory</Message>
+    </Class>
+    <Method classname="uk.co.marcoratto.ftps.listeners.ListenerFactory" name="reset" signature="()V" isStatic="false" primary="true">
+      <SourceLine classname="uk.co.marcoratto.ftps.listeners.ListenerFactory"/>
+      <Message>In method uk.co.marcoratto.ftps.listeners.ListenerFactory.reset()</Message>
+    </Method>
+    <Field classname="uk.co.marcoratto.ftps.listeners.ListenerFactory" name="instance" signature="Luk/co/marcoratto/ftps/listeners/ListenerFactory;" isStatic="true" primary="true">
+      <SourceLine classname="uk.co.marcoratto.ftps.listeners.ListenerFactory">
+        <Message>In &lt;Unknown&gt;</Message>
+      </SourceLine>
+      <Message>Field uk.co.marcoratto.ftps.listeners.ListenerFactory.instance</Message>
+    </Field>
+    <SourceLine classname="uk.co.marcoratto.ftps.listeners.ListenerFactory" startBytecode="1" endBytecode="1">
+      <Message>In &lt;Unknown&gt;</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="DC_DOUBLECHECK" priority="2" abbrev="DC" category="MT_CORRECTNESS" instanceHash="d517fb9ea8f8c3210c2a8b7b2e949920" instanceOccurrenceNum="0" instanceOccurrenceMax="0" rank="14">
+    <ShortMessage>Possible double check of field</ShortMessage>
+    <LongMessage>Possible doublecheck on uk.co.marcoratto.util.PropertiesManager.instance in uk.co.marcoratto.util.PropertiesManager.getInstance()</LongMessage>
+    <Class classname="uk.co.marcoratto.util.PropertiesManager" primary="true">
+      <SourceLine classname="uk.co.marcoratto.util.PropertiesManager">
+        <Message>In &lt;Unknown&gt;</Message>
+      </SourceLine>
+      <Message>In class uk.co.marcoratto.util.PropertiesManager</Message>
+    </Class>
+    <Method classname="uk.co.marcoratto.util.PropertiesManager" name="getInstance" signature="()Luk/co/marcoratto/util/PropertiesManager;" isStatic="true" primary="true">
+      <SourceLine classname="uk.co.marcoratto.util.PropertiesManager"/>
+      <Message>In method uk.co.marcoratto.util.PropertiesManager.getInstance()</Message>
+    </Method>
+    <Field classname="uk.co.marcoratto.util.PropertiesManager" name="instance" signature="Luk/co/marcoratto/util/PropertiesManager;" isStatic="true" primary="true" role="FIELD_ON">
+      <SourceLine classname="uk.co.marcoratto.util.PropertiesManager">
+        <Message>In &lt;Unknown&gt;</Message>
+      </SourceLine>
+      <Message>On field uk.co.marcoratto.util.PropertiesManager.instance</Message>
+    </Field>
+    <SourceLine classname="uk.co.marcoratto.util.PropertiesManager" startBytecode="3" endBytecode="15">
+      <Message>In &lt;Unknown&gt;</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="NP_NULL_ON_SOME_PATH" priority="1" abbrev="NP" category="CORRECTNESS" instanceHash="e95c21157e737b3da64d087b30669fae" instanceOccurrenceNum="0" instanceOccurrenceMax="0" rank="6">
+    <ShortMessage>Possible null pointer dereference</ShortMessage>
+    <LongMessage>Possible null pointer dereference of ? in uk.co.marcoratto.util.PropertiesManager.readFileProperties(URL)</LongMessage>
+    <Class classname="uk.co.marcoratto.util.PropertiesManager" primary="true">
+      <SourceLine classname="uk.co.marcoratto.util.PropertiesManager">
+        <Message>In &lt;Unknown&gt;</Message>
+      </SourceLine>
+      <Message>In class uk.co.marcoratto.util.PropertiesManager</Message>
+    </Class>
+    <Method classname="uk.co.marcoratto.util.PropertiesManager" name="readFileProperties" signature="(Ljava/net/URL;)V" isStatic="false" primary="true">
+      <SourceLine classname="uk.co.marcoratto.util.PropertiesManager"/>
+      <Message>In method uk.co.marcoratto.util.PropertiesManager.readFileProperties(URL)</Message>
+    </Method>
+    <LocalVariable name="?" register="2" pc="48" role="LOCAL_VARIABLE_VALUE_OF">
+      <Message>Value loaded from ?</Message>
+    </LocalVariable>
+    <SourceLine classname="uk.co.marcoratto.util.PropertiesManager" startBytecode="49" endBytecode="49" role="SOURCE_LINE_DEREF">
+      <Message>Dereferenced at &lt;Unknown&gt;</Message>
+    </SourceLine>
+    <SourceLine classname="uk.co.marcoratto.util.PropertiesManager" startBytecode="32" endBytecode="32" role="SOURCE_LINE_KNOWN_NULL">
+      <Message>Known null at &lt;Unknown&gt;</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="NP_NULL_ON_SOME_PATH_EXCEPTION" priority="2" abbrev="NP" category="CORRECTNESS" instanceHash="a080bb6dd24d1749045caac49ecc487a" instanceOccurrenceNum="0" instanceOccurrenceMax="0" rank="11">
+    <ShortMessage>Possible null pointer dereference in method on exception path</ShortMessage>
+    <LongMessage>Possible null pointer dereference of ? in uk.co.marcoratto.util.PropertiesManager.readFileProperties(URL) on exception path</LongMessage>
+    <Class classname="uk.co.marcoratto.util.PropertiesManager" primary="true">
+      <SourceLine classname="uk.co.marcoratto.util.PropertiesManager">
+        <Message>In &lt;Unknown&gt;</Message>
+      </SourceLine>
+      <Message>In class uk.co.marcoratto.util.PropertiesManager</Message>
+    </Class>
+    <Method classname="uk.co.marcoratto.util.PropertiesManager" name="readFileProperties" signature="(Ljava/net/URL;)V" isStatic="false" primary="true">
+      <SourceLine classname="uk.co.marcoratto.util.PropertiesManager"/>
+      <Message>In method uk.co.marcoratto.util.PropertiesManager.readFileProperties(URL)</Message>
+    </Method>
+    <LocalVariable name="?" register="3" pc="83" role="LOCAL_VARIABLE_VALUE_OF">
+      <Message>Value loaded from ?</Message>
+    </LocalVariable>
+    <SourceLine classname="uk.co.marcoratto.util.PropertiesManager" startBytecode="101" endBytecode="101" role="SOURCE_LINE_DEREF">
+      <Message>Dereferenced at &lt;Unknown&gt;</Message>
+    </SourceLine>
+    <SourceLine classname="uk.co.marcoratto.util.PropertiesManager" startBytecode="86" endBytecode="86" role="SOURCE_LINE_KNOWN_NULL">
+      <Message>Known null at &lt;Unknown&gt;</Message>
+    </SourceLine>
+    <SourceLine classname="uk.co.marcoratto.util.PropertiesManager" startBytecode="94" endBytecode="94" role="SOURCE_LINE_KNOWN_NULL">
+      <Message>Known null at &lt;Unknown&gt;</Message>
+    </SourceLine>
+    <SourceLine classname="uk.co.marcoratto.util.PropertiesManager" startBytecode="97" endBytecode="97" role="SOURCE_LINE_KNOWN_NULL">
+      <Message>Known null at &lt;Unknown&gt;</Message>
+    </SourceLine>
+    <Property name="edu.umd.cs.findbugs.detect.DoomedCodeWarningProperty.DOOMED_CODE" value="true"/>
+    <Property name="edu.umd.cs.findbugs.detect.NullDerefProperty.ALWAYS_ON_EXCEPTION_PATH" value="true"/>
+  </BugInstance>
+  <BugInstance type="OS_OPEN_STREAM" priority="2" abbrev="OS" category="BAD_PRACTICE" instanceHash="7e7599c426b9be95701e575bc3eef1f9" instanceOccurrenceNum="0" instanceOccurrenceMax="0" rank="16">
+    <ShortMessage>Method may fail to close stream</ShortMessage>
+    <LongMessage>uk.co.marcoratto.util.PropertiesManager.readFileProperties(File) may fail to close stream</LongMessage>
+    <Class classname="uk.co.marcoratto.util.PropertiesManager" primary="true">
+      <SourceLine classname="uk.co.marcoratto.util.PropertiesManager">
+        <Message>In &lt;Unknown&gt;</Message>
+      </SourceLine>
+      <Message>In class uk.co.marcoratto.util.PropertiesManager</Message>
+    </Class>
+    <Method classname="uk.co.marcoratto.util.PropertiesManager" name="readFileProperties" signature="(Ljava/io/File;)V" isStatic="false" primary="true">
+      <SourceLine classname="uk.co.marcoratto.util.PropertiesManager" startBytecode="0" endBytecode="24"/>
+      <Message>In method uk.co.marcoratto.util.PropertiesManager.readFileProperties(File)</Message>
+    </Method>
+    <Type descriptor="Ljava/io/InputStream;" role="TYPE_CLOSEIT">
+      <SourceLine classname="java.io.InputStream" start="26" end="346" sourcefile="InputStream.java" sourcepath="java/io/InputStream.java">
+        <Message>At InputStream.java:[lines 26-346]</Message>
+      </SourceLine>
+      <Message>Need to close java.io.InputStream </Message>
+    </Type>
+    <SourceLine classname="uk.co.marcoratto.util.PropertiesManager" startBytecode="2" endBytecode="2">
+      <Message>In &lt;Unknown&gt;</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="OS_OPEN_STREAM" priority="2" abbrev="OS" category="BAD_PRACTICE" instanceHash="7f1ff7e2124940faaffca2c4b05264f9" instanceOccurrenceNum="0" instanceOccurrenceMax="0" rank="16">
+    <ShortMessage>Method may fail to close stream</ShortMessage>
+    <LongMessage>uk.co.marcoratto.util.PropertiesManager.readFileProperties(String) may fail to close stream</LongMessage>
+    <Class classname="uk.co.marcoratto.util.PropertiesManager" primary="true">
+      <SourceLine classname="uk.co.marcoratto.util.PropertiesManager">
+        <Message>In &lt;Unknown&gt;</Message>
+      </SourceLine>
+      <Message>In class uk.co.marcoratto.util.PropertiesManager</Message>
+    </Class>
+    <Method classname="uk.co.marcoratto.util.PropertiesManager" name="readFileProperties" signature="(Ljava/lang/String;)V" isStatic="false" primary="true">
+      <SourceLine classname="uk.co.marcoratto.util.PropertiesManager" startBytecode="0" endBytecode="23"/>
+      <Message>In method uk.co.marcoratto.util.PropertiesManager.readFileProperties(String)</Message>
+    </Method>
+    <Type descriptor="Ljava/io/InputStream;" role="TYPE_CLOSEIT">
+      <SourceLine classname="java.io.InputStream" start="26" end="346" sourcefile="InputStream.java" sourcepath="java/io/InputStream.java">
+        <Message>At InputStream.java:[lines 26-346]</Message>
+      </SourceLine>
+      <Message>Need to close java.io.InputStream </Message>
+    </Type>
+    <SourceLine classname="uk.co.marcoratto.util.PropertiesManager" startBytecode="5" endBytecode="5">
+      <Message>In &lt;Unknown&gt;</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD" priority="1" abbrev="ST" category="STYLE" instanceHash="67dd923964af05527994672ffa0560f6" instanceOccurrenceNum="0" instanceOccurrenceMax="0" rank="15">
+    <ShortMessage>Write to static field from instance method</ShortMessage>
+    <LongMessage>Write to static field uk.co.marcoratto.util.PropertiesManager.instance from instance method uk.co.marcoratto.util.PropertiesManager.reset()</LongMessage>
+    <Class classname="uk.co.marcoratto.util.PropertiesManager" primary="true">
+      <SourceLine classname="uk.co.marcoratto.util.PropertiesManager">
+        <Message>In &lt;Unknown&gt;</Message>
+      </SourceLine>
+      <Message>In class uk.co.marcoratto.util.PropertiesManager</Message>
+    </Class>
+    <Method classname="uk.co.marcoratto.util.PropertiesManager" name="reset" signature="()V" isStatic="false" primary="true">
+      <SourceLine classname="uk.co.marcoratto.util.PropertiesManager"/>
+      <Message>In method uk.co.marcoratto.util.PropertiesManager.reset()</Message>
+    </Method>
+    <Field classname="uk.co.marcoratto.util.PropertiesManager" name="instance" signature="Luk/co/marcoratto/util/PropertiesManager;" isStatic="true" primary="true">
+      <SourceLine classname="uk.co.marcoratto.util.PropertiesManager">
+        <Message>In &lt;Unknown&gt;</Message>
+      </SourceLine>
+      <Message>Field uk.co.marcoratto.util.PropertiesManager.instance</Message>
+    </Field>
+    <SourceLine classname="uk.co.marcoratto.util.PropertiesManager" startBytecode="1" endBytecode="1">
+      <Message>In &lt;Unknown&gt;</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="SBSC_USE_STRINGBUFFER_CONCATENATION" priority="2" abbrev="SBSC" category="PERFORMANCE" instanceHash="e92fe6c4445b80288c63f1ffcf8a0cb4" instanceOccurrenceNum="0" instanceOccurrenceMax="0" rank="18">
+    <ShortMessage>Method concatenates strings using + in a loop</ShortMessage>
+    <LongMessage>uk.co.marcoratto.util.RelativePath.matchPathLists(List, List) concatenates strings using + in a loop</LongMessage>
+    <Class classname="uk.co.marcoratto.util.RelativePath" primary="true">
+      <SourceLine classname="uk.co.marcoratto.util.RelativePath">
+        <Message>In &lt;Unknown&gt;</Message>
+      </SourceLine>
+      <Message>In class uk.co.marcoratto.util.RelativePath</Message>
+    </Class>
+    <Method classname="uk.co.marcoratto.util.RelativePath" name="matchPathLists" signature="(Ljava/util/List;Ljava/util/List;)Ljava/lang/String;" isStatic="true" primary="true">
+      <SourceLine classname="uk.co.marcoratto.util.RelativePath"/>
+      <Message>In method uk.co.marcoratto.util.RelativePath.matchPathLists(List, List)</Message>
+    </Method>
+    <SourceLine classname="uk.co.marcoratto.util.RelativePath" startBytecode="66" endBytecode="66">
+      <Message>In &lt;Unknown&gt;</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="DM_DEFAULT_ENCODING" priority="1" abbrev="Dm" category="I18N" instanceHash="a33300dfd90ec96f99da2277ac406af8" instanceOccurrenceNum="0" instanceOccurrenceMax="0" rank="19">
+    <ShortMessage>Reliance on default encoding</ShortMessage>
+    <LongMessage>Found reliance on default encoding in uk.co.marcoratto.util.Utility.inputString(String, String): new java.io.InputStreamReader(InputStream)</LongMessage>
+    <Class classname="uk.co.marcoratto.util.Utility" primary="true">
+      <SourceLine classname="uk.co.marcoratto.util.Utility">
+        <Message>In &lt;Unknown&gt;</Message>
+      </SourceLine>
+      <Message>In class uk.co.marcoratto.util.Utility</Message>
+    </Class>
+    <Method classname="uk.co.marcoratto.util.Utility" name="inputString" signature="(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;" isStatic="true" primary="true">
+      <SourceLine classname="uk.co.marcoratto.util.Utility"/>
+      <Message>In method uk.co.marcoratto.util.Utility.inputString(String, String)</Message>
+    </Method>
+    <Method classname="java.io.InputStreamReader" name="&lt;init&gt;" signature="(Ljava/io/InputStream;)V" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.io.InputStreamReader" start="55" end="62" startBytecode="0" endBytecode="83" sourcefile="InputStreamReader.java" sourcepath="java/io/InputStreamReader.java"/>
+      <Message>Called method new java.io.InputStreamReader(InputStream)</Message>
+    </Method>
+    <SourceLine classname="uk.co.marcoratto.util.Utility" startBytecode="16" endBytecode="16">
+      <Message>In &lt;Unknown&gt;</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugCategory category="STYLE">
+    <Description>Dodgy code</Description>
+  </BugCategory>
+  <BugCategory category="MALICIOUS_CODE">
+    <Description>Malicious code vulnerability</Description>
+  </BugCategory>
+  <BugCategory category="BAD_PRACTICE">
+    <Description>Bad practice</Description>
+  </BugCategory>
+  <BugCategory category="CORRECTNESS">
+    <Description>Correctness</Description>
+  </BugCategory>
+  <BugCategory category="I18N">
+    <Description>Internationalization</Description>
+  </BugCategory>
+  <BugCategory category="PERFORMANCE">
+    <Description>Performance</Description>
+  </BugCategory>
+  <BugCategory category="MT_CORRECTNESS">
+    <Description>Multithreaded correctness</Description>
+  </BugCategory>
+  <BugPattern type="DM_DEFAULT_ENCODING" abbrev="Dm" category="I18N">
+    <ShortDescription>Reliance on default encoding</ShortDescription>
+    <Details><![CDATA[
+
+<p> Found a call to a method which will perform a byte to String (or String to byte) conversion, and will assume that the default platform encoding is suitable. This will cause the application behaviour to vary between platforms. Use an alternative API and specify a charset name or Charset object explicitly.  </p>
+
+      ]]></Details>
+  </BugPattern>
+  <BugPattern type="NP_NULL_ON_SOME_PATH_EXCEPTION" abbrev="NP" category="CORRECTNESS">
+    <ShortDescription>Possible null pointer dereference in method on exception path</ShortDescription>
+    <Details><![CDATA[
+
+<p> A reference value which is null on some exception control path is
+dereferenced here.&nbsp; This may lead to a <code>NullPointerException</code>
+when the code is executed.&nbsp;
+Note that because FindBugs currently does not prune infeasible exception paths,
+this may be a false warning.</p>
+
+<p> Also note that FindBugs considers the default case of a switch statement to
+be an exception path, since the default case is often infeasible.</p>
+
+    ]]></Details>
+  </BugPattern>
+  <BugPattern type="DC_DOUBLECHECK" abbrev="DC" category="MT_CORRECTNESS" cweid="609">
+    <ShortDescription>Possible double check of field</ShortDescription>
+    <Details><![CDATA[
+
+  <p> This method may contain an instance of double-checked locking.&nbsp;
+  This idiom is not correct according to the semantics of the Java memory
+  model.&nbsp; For more information, see the web page
+  <a href="http://www.cs.umd.edu/~pugh/java/memoryModel/DoubleCheckedLocking.html"
+  >http://www.cs.umd.edu/~pugh/java/memoryModel/DoubleCheckedLocking.html</a>.</p>
+
+    ]]></Details>
+  </BugPattern>
+  <BugPattern type="URF_UNREAD_FIELD" abbrev="UrF" category="PERFORMANCE">
+    <ShortDescription>Unread field</ShortDescription>
+    <Details><![CDATA[
+
+  <p> This field is never read.&nbsp; Consider removing it from the class.</p>
+
+    ]]></Details>
+  </BugPattern>
+  <BugPattern type="OS_OPEN_STREAM" abbrev="OS" category="BAD_PRACTICE">
+    <ShortDescription>Method may fail to close stream</ShortDescription>
+    <Details><![CDATA[
+
+<p> The method creates an IO stream object, does not assign it to any
+fields, pass it to other methods that might close it,
+or return it, and does not appear to close
+the stream on all paths out of the method.&nbsp; This may result in
+a file descriptor leak.&nbsp; It is generally a good
+idea to use a <code>finally</code> block to ensure that streams are
+closed.</p>
+
+    ]]></Details>
+  </BugPattern>
+  <BugPattern type="RV_RETURN_VALUE_IGNORED_BAD_PRACTICE" abbrev="RV" category="BAD_PRACTICE" cweid="253">
+    <ShortDescription>Method ignores exceptional return value</ShortDescription>
+    <Details><![CDATA[
+
+   <p> This method returns a value that is not checked. The return value should be checked
+since it can indicate an unusual or unexpected function execution. For
+example, the <code>File.delete()</code> method returns false
+if the file could not be successfully deleted (rather than
+throwing an Exception).
+If you don't check the result, you won't notice if the method invocation
+signals unexpected behavior by returning an atypical return value.
+</p>
+
+    ]]></Details>
+  </BugPattern>
+  <BugPattern type="SBSC_USE_STRINGBUFFER_CONCATENATION" abbrev="SBSC" category="PERFORMANCE">
+    <ShortDescription>Method concatenates strings using + in a loop</ShortDescription>
+    <Details><![CDATA[
+
+<p> The method seems to be building a String using concatenation in a loop.
+In each iteration, the String is converted to a StringBuffer/StringBuilder,
+   appended to, and converted back to a String.
+   This can lead to a cost quadratic in the number of iterations,
+   as the growing string is recopied in each iteration. </p>
+
+<p>Better performance can be obtained by using
+a StringBuffer (or StringBuilder in Java 1.5) explicitly.</p>
+
+<p> For example:</p>
+<pre>
+  // This is bad
+  String s = "";
+  for (int i = 0; i &lt; field.length; ++i) {
+    s = s + field[i];
+  }
+
+  // This is better
+  StringBuffer buf = new StringBuffer();
+  for (int i = 0; i &lt; field.length; ++i) {
+    buf.append(field[i]);
+  }
+  String s = buf.toString();
+</pre>
+
+    ]]></Details>
+  </BugPattern>
+  <BugPattern type="NP_NULL_ON_SOME_PATH" abbrev="NP" category="CORRECTNESS">
+    <ShortDescription>Possible null pointer dereference</ShortDescription>
+    <Details><![CDATA[
+
+<p> There is a branch of statement that, <em>if executed,</em>  guarantees that
+a null value will be dereferenced, which
+would generate a <code>NullPointerException</code> when the code is executed.
+Of course, the problem might be that the branch or statement is infeasible and that
+the null pointer exception can't ever be executed; deciding that is beyond the ability of FindBugs.
+</p>
+
+    ]]></Details>
+  </BugPattern>
+  <BugPattern type="ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD" abbrev="ST" category="STYLE">
+    <ShortDescription>Write to static field from instance method</ShortDescription>
+    <Details><![CDATA[
+
+  <p> This instance method writes to a static field. This is tricky to get
+correct if multiple instances are being manipulated,
+and generally bad practice.
+</p>
+
+    ]]></Details>
+  </BugPattern>
+  <BugPattern type="MS_SHOULD_BE_FINAL" abbrev="MS" category="MALICIOUS_CODE">
+    <ShortDescription>Field isn&apos;t final but should be</ShortDescription>
+    <Details><![CDATA[
+
+   <p>
+This static field public but not final, and
+could be changed by malicious code or
+        by accident from another package.
+        The field could be made final to avoid
+        this vulnerability.</p>
+
+    ]]></Details>
+  </BugPattern>
+  <BugCode abbrev="SBSC">
+    <Description>String concatenation in loop using + operator</Description>
+  </BugCode>
+  <BugCode abbrev="Dm">
+    <Description>Dubious method used</Description>
+  </BugCode>
+  <BugCode abbrev="ST">
+    <Description>Misuse of static fields</Description>
+  </BugCode>
+  <BugCode abbrev="RV" cweid="440">
+    <Description>Bad use of return value from method</Description>
+  </BugCode>
+  <BugCode abbrev="UrF">
+    <Description>Unread field</Description>
+  </BugCode>
+  <BugCode abbrev="DC">
+    <Description>Possible double check of field</Description>
+  </BugCode>
+  <BugCode abbrev="OS">
+    <Description>Stream not closed on all paths</Description>
+  </BugCode>
+  <BugCode abbrev="NP" cweid="476">
+    <Description>Null pointer dereference</Description>
+  </BugCode>
+  <BugCode abbrev="MS" cweid="218">
+    <Description>Mutable static field</Description>
+  </BugCode>
+  <Errors errors="0" missingClasses="0"></Errors>
+  <FindBugsSummary timestamp="Mon, 18 Feb 2013 12:06:43 +0100" total_classes="19" referenced_classes="79" total_bugs="21" total_size="1354" num_packages="4" vm_version="20.10-b01" cpu_seconds="46.09" clock_seconds="28.80" peak_mbytes="282.72" alloc_mbytes="910.25" gc_seconds="0.23" priority_2="9" priority_1="12">
+    <FileStats path="uk/co/marcoratto/file/maketree/&lt;Unknown&gt;" bugCount="1" size="54" bugHash="80221787c78b0b0b44e9e1068feb45c3"/>
+    <FileStats path="uk/co/marcoratto/ftps/&lt;Unknown&gt;" bugCount="11" size="890" bugHash="44ccd5c2fea5dc7327c6f1501b69a181"/>
+    <FileStats path="uk/co/marcoratto/ftps/listeners/&lt;Unknown&gt;" bugCount="1" size="161" bugHash="4635797a474514e800cca61cfa50770c"/>
+    <FileStats path="uk/co/marcoratto/util/&lt;Unknown&gt;" bugCount="8" size="249" bugHash="7c4b6ede540f33449cb7a741db8bfcc0"/>
+    <PackageStats package="uk.co.marcoratto.file.maketree" total_bugs="1" total_types="3" total_size="54" priority_2="1">
+      <ClassStats class="uk.co.marcoratto.file.maketree.MakeTree" sourceFile="&lt;Unknown&gt;" interface="false" size="43" bugs="1" priority_2="1"/>
+      <ClassStats class="uk.co.marcoratto.file.maketree.MakeTreeException" sourceFile="&lt;Unknown&gt;" interface="false" size="8" bugs="0"/>
+      <ClassStats class="uk.co.marcoratto.file.maketree.MakeTreeInterface" sourceFile="&lt;Unknown&gt;" interface="true" size="3" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="uk.co.marcoratto.ftps" total_bugs="11" total_types="4" total_size="890" priority_2="3" priority_1="8">
+      <ClassStats class="uk.co.marcoratto.ftps.FTPS" sourceFile="&lt;Unknown&gt;" interface="false" size="662" bugs="9" priority_2="1" priority_1="8"/>
+      <ClassStats class="uk.co.marcoratto.ftps.FTPS$1" sourceFile="&lt;Unknown&gt;" interface="false" size="7" bugs="0"/>
+      <ClassStats class="uk.co.marcoratto.ftps.FTPSException" sourceFile="&lt;Unknown&gt;" interface="false" size="14" bugs="0"/>
+      <ClassStats class="uk.co.marcoratto.ftps.Runme" sourceFile="&lt;Unknown&gt;" interface="false" size="207" bugs="2" priority_2="2"/>
+    </PackageStats>
+    <PackageStats package="uk.co.marcoratto.ftps.listeners" total_bugs="1" total_types="7" total_size="161" priority_1="1">
+      <ClassStats class="uk.co.marcoratto.ftps.listeners.Listener" sourceFile="&lt;Unknown&gt;" interface="true" size="8" bugs="0"/>
+      <ClassStats class="uk.co.marcoratto.ftps.listeners.ListenerAbstract" sourceFile="&lt;Unknown&gt;" interface="false" size="13" bugs="0"/>
+      <ClassStats class="uk.co.marcoratto.ftps.listeners.ListenerException" sourceFile="&lt;Unknown&gt;" interface="false" size="23" bugs="0"/>
+      <ClassStats class="uk.co.marcoratto.ftps.listeners.ListenerFactory" sourceFile="&lt;Unknown&gt;" interface="false" size="24" bugs="1" priority_1="1"/>
+      <ClassStats class="uk.co.marcoratto.ftps.listeners.ListenerFactoryException" sourceFile="&lt;Unknown&gt;" interface="false" size="23" bugs="0"/>
+      <ClassStats class="uk.co.marcoratto.ftps.listeners.ListenerLog4J" sourceFile="&lt;Unknown&gt;" interface="false" size="35" bugs="0"/>
+      <ClassStats class="uk.co.marcoratto.ftps.listeners.ListenerPrintStream" sourceFile="&lt;Unknown&gt;" interface="false" size="35" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="uk.co.marcoratto.util" total_bugs="8" total_types="5" total_size="249" priority_2="5" priority_1="3">
+      <ClassStats class="uk.co.marcoratto.util.PropertiesManager" sourceFile="&lt;Unknown&gt;" interface="false" size="106" bugs="6" priority_2="4" priority_1="2"/>
+      <ClassStats class="uk.co.marcoratto.util.PropertiesManagerException" sourceFile="&lt;Unknown&gt;" interface="false" size="14" bugs="0"/>
+      <ClassStats class="uk.co.marcoratto.util.RelativePath" sourceFile="&lt;Unknown&gt;" interface="false" size="54" bugs="1" priority_2="1"/>
+      <ClassStats class="uk.co.marcoratto.util.Utility" sourceFile="&lt;Unknown&gt;" interface="false" size="69" bugs="1" priority_1="1"/>
+      <ClassStats class="uk.co.marcoratto.util.UtilityException" sourceFile="&lt;Unknown&gt;" interface="false" size="6" bugs="0"/>
+    </PackageStats>
+    <FindBugsProfile>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ValueNumberDataflowFactory" totalMilliseconds="2885" invocations="182" avgMicrosecondsPerInvocation="15853" maxMicrosecondsPerInvocation="413647" standardDeviationMircosecondsPerInvocation="48319"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.TypeDataflowFactory" totalMilliseconds="2217" invocations="182" avgMicrosecondsPerInvocation="12184" maxMicrosecondsPerInvocation="183677" standardDeviationMircosecondsPerInvocation="27853"/>
+      <ClassProfile name="edu.umd.cs.findbugs.ba.npe.NullDerefAndRedundantComparisonFinder" totalMilliseconds="1810" invocations="162" avgMicrosecondsPerInvocation="11178" maxMicrosecondsPerInvocation="373848" standardDeviationMircosecondsPerInvocation="34397"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.UnconditionalValueDerefDataflowFactory" totalMilliseconds="1799" invocations="162" avgMicrosecondsPerInvocation="11107" maxMicrosecondsPerInvocation="618756" standardDeviationMircosecondsPerInvocation="51010"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.IsNullValueDataflowFactory" totalMilliseconds="1738" invocations="162" avgMicrosecondsPerInvocation="10729" maxMicrosecondsPerInvocation="467562" standardDeviationMircosecondsPerInvocation="40213"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassInfoAnalysisEngine" totalMilliseconds="1717" invocations="480" avgMicrosecondsPerInvocation="3578" maxMicrosecondsPerInvocation="71042" standardDeviationMircosecondsPerInvocation="7937"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.ExplicitSerialization" totalMilliseconds="1085" invocations="79" avgMicrosecondsPerInvocation="13745" maxMicrosecondsPerInvocation="109977" standardDeviationMircosecondsPerInvocation="22544"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FieldItemSummary" totalMilliseconds="1073" invocations="79" avgMicrosecondsPerInvocation="13593" maxMicrosecondsPerInvocation="110001" standardDeviationMircosecondsPerInvocation="21878"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.CFGFactory" totalMilliseconds="904" invocations="162" avgMicrosecondsPerInvocation="5584" maxMicrosecondsPerInvocation="186766" standardDeviationMircosecondsPerInvocation="19730"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindRefComparison$SpecialTypeAnalysis" totalMilliseconds="697" invocations="132" avgMicrosecondsPerInvocation="5283" maxMicrosecondsPerInvocation="73299" standardDeviationMircosecondsPerInvocation="12732"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.NoteDirectlyRelevantTypeQualifiers" totalMilliseconds="684" invocations="79" avgMicrosecondsPerInvocation="8670" maxMicrosecondsPerInvocation="73528" standardDeviationMircosecondsPerInvocation="13745"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ConstantDataflowFactory" totalMilliseconds="539" invocations="162" avgMicrosecondsPerInvocation="3333" maxMicrosecondsPerInvocation="93848" standardDeviationMircosecondsPerInvocation="9203"/>
+      <ClassProfile name="edu.umd.cs.findbugs.OpcodeStack$JumpInfoFactory" totalMilliseconds="351" invocations="280" avgMicrosecondsPerInvocation="1253" maxMicrosecondsPerInvocation="30400" standardDeviationMircosecondsPerInvocation="3027"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.StreamResourceTracker" totalMilliseconds="345" invocations="33" avgMicrosecondsPerInvocation="10475" maxMicrosecondsPerInvocation="39470" standardDeviationMircosecondsPerInvocation="10710"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FunctionsThatMightBeMistakenForProcedures" totalMilliseconds="271" invocations="79" avgMicrosecondsPerInvocation="3438" maxMicrosecondsPerInvocation="33691" standardDeviationMircosecondsPerInvocation="6439"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindOpenStream" totalMilliseconds="254" invocations="19" avgMicrosecondsPerInvocation="13378" maxMicrosecondsPerInvocation="60361" standardDeviationMircosecondsPerInvocation="22137"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.CalledMethods" totalMilliseconds="249" invocations="79" avgMicrosecondsPerInvocation="3154" maxMicrosecondsPerInvocation="27286" standardDeviationMircosecondsPerInvocation="5050"/>
+    </FindBugsProfile>
+  </FindBugsSummary>
+  <ClassFeatures></ClassFeatures>
+  <History></History>
+</BugCollection>
